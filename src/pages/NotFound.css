@@ -1,0 +1,29 @@
+.notfound {
+  display: flex;
+  align-items: center;
+  min-height: 70vh;
+  text-align: center;
+  background-color: var(--color-light-gray);
+}
+
+.notfound__content {
+  max-width: 520px;
+}
+
+.notfound__code {
+  font-size: 6rem;
+  font-weight: 800;
+  color: var(--color-cyan);
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.notfound__content h1 {
+  margin-bottom: 0.75rem;
+}
+
+.notfound__content p {
+  color: var(--color-gray);
+  margin-bottom: 1.75rem;
+}

@@ -1,0 +1,211 @@
+/* ============================================
+   Global styles: variables, reset & shared UI
+   ============================================ */
+
+:root {
+  /* Color palette */
+  --color-white: #ffffff;
+  --color-dark-blue: #0b2545;
+  --color-navy: #13315c;
+  --color-light-gray: #f4f6f9;
+  --color-gray: #6b7a90;
+  --color-cyan: #00b4d8;
+  --color-cyan-dark: #0096b7;
+
+  /* Shared design tokens */
+  --radius: 12px;
+  --shadow-soft: 0 6px 20px rgba(11, 37, 69, 0.08);
+  --shadow-hover: 0 12px 30px rgba(11, 37, 69, 0.15);
+  --transition: all 0.25s ease;
+  --max-width: 1160px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--color-dark-blue);
+  background-color: var(--color-white);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+main {
+  min-height: 70vh;
+}
+
+/* ---------- Layout helpers ---------- */
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section {
+  padding: 4.5rem 0;
+}
+
+.section--gray {
+  background-color: var(--color-light-gray);
+}
+
+/* ---------- Section headings ---------- */
+
+.section-heading {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3rem;
+}
+
+.section-heading__eyebrow {
+  display: inline-block;
+  color: var(--color-cyan-dark);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.section-heading__title {
+  font-size: 2rem;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+.section-heading__subtitle {
+  color: var(--color-gray);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.btn--primary {
+  background-color: var(--color-cyan);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-cyan-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-white);
+  color: var(--color-dark-blue);
+  transform: translateY(-2px);
+}
+
+/* ---------- Cards ---------- */
+
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ---------- Grid helpers ---------- */
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+@media (max-width: 900px) {
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .section-heading__title {
+    font-size: 1.6rem;
+  }
+}
+
+/* ---------- Page header (inner pages hero strip) ---------- */
+
+.page-header {
+  background: linear-gradient(135deg, var(--color-dark-blue), var(--color-navy));
+  color: var(--color-white);
+  text-align: center;
+  padding: 4rem 1.25rem;
+}
+
+.page-header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 620px;
+  margin: 0 auto;
+}
