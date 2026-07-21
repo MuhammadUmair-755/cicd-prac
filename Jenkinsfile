@@ -56,6 +56,10 @@ pipeline {
         }
     }
 
+
+
+    
+
     post {
         success {
             echo "Deployed build #${BUILD_NUMBER} to ECS."
