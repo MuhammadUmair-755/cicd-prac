@@ -5,8 +5,8 @@ pipeline {
         AWS_REGION     = 'ap-south-1'                 // change to your region, e.g. ap-south-1
         AWS_ACCOUNT_ID = '058416978522'              // your 12-digit AWS account ID
         ECR_REPO       = 'nexovate-web'              // ECR repository name
-        ECR_REGISTRY   = "058416978522.dkr.ecr.ap-south-1.amazonaws.com/nexovate-web"
-        IMAGE          = "https://058416978522.dkr.ecr.ap-south-1.amazonaws.com"
+        ECR_REGISTRY   = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
+        IMAGE          = "${ECR_REGISTRY}/${ECR_REPO}"
         ECS_CLUSTER    = 'nexovate-cluster'          // ECS cluster name
         ECS_SERVICE    = 'nexovate-service'          // ECS service name
     }
